@@ -109,7 +109,7 @@ class sklearnManifold(GenericModel):
         Plots the 2D or 3D embedding resulting from the manifold model.
         """
         if self.transformed_data.shape[1] == 2:
-            plt.scatter(self.transformed_data[:, 0], self.transformed_data[:, 1], s=50, cmap='viridis')
+            plt.scatter(self.transformed_data[:, 0], self.transformed_data[:, 1], s=50, c=self.transformed_data[:, 0], cmap='viridis')
             plt.title(f"{self.name} 2D Embedding")
             plt.xlabel("Component 1")
             plt.ylabel("Component 2")
@@ -145,7 +145,7 @@ class sklearnManifold(GenericModel):
         elif transformed_data.shape[1] == 3:
             fig = plt.figure()
             ax = fig.add_subplot(111, projection='3d')
-            ax.scatter(transformed_data[:, 0], transformed_data[:, 1], transformed_data[:, 2], s=50, cmap='viridis')
+            ax.scatter(transformed_data[:, 0], transformed_data[:, 1], transformed_data[:, 2], s=50, c=transformed_data[:, 0], cmap='viridis')
             ax.set_title(f"{self.name} 3D Embedding")
             ax.set_xlabel("Component 1")
             ax.set_ylabel("Component 2")

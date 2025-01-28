@@ -59,14 +59,14 @@ def load_tennessee_eastman (train_id = 0, test_id = 0):
         else:
 
             train_df = create_df_with_dates(pd.read_csv(filepath, 
-                                                        sep = '\s+',
+                                                        sep = r'\s+',
                                                         names = tags),
                                             freq = '3min')
 
     with pkg_resources.path(tennessee_eastman, file_test) as filepath:
 
         test_df = create_df_with_dates(pd.read_csv(filepath, 
-                                                   sep = '\s+', 
+                                                   sep = r'\s+', 
                                                    names = tags),
                                        start = '2020-02-01 00:00:00',
                                        freq = '3min')
